@@ -4,4 +4,14 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+  <servlet>
+  	<servlet-name>Message</servlet-name>
+  	<display-name>Message</display-name>
+  	<description></description>
+  	<servlet-class>com.controller.Message</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>Message</servlet-name>
+  	<url-pattern>/Message</url-pattern>
+  </servlet-mapping>
 </web-app>
