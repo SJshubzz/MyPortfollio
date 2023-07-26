@@ -32,7 +32,7 @@ https://www.tooplate.com/view/2115-marvel
 	<!-- MENU -->
 	<nav class="navbar navbar-expand-sm navbar-light">
 		<div class="container">
-			<a class="navbar-brand" href="index.html"><i class='uil uil-user'></i>
+			<a class="navbar-brand" href="login.jsp"><i class='uil uil-user'></i>
 				S.S.J</a>
 
 			<button class="navbar-toggler" type="button" data-toggle="collapse"
