@@ -157,9 +157,9 @@ if (!email.equals(null)) {
 										}
 									}
 								</script>
-								<form action="" method="get" onsubmit="return ensure()">
-									<input type="hidden" name="sn" value="12">
-									<button>delete</button>
+								<form action="DeleteMessage" method="post" >
+									<input type="hidden" name="sn" value="<%=m.getSn()%>">
+									<button>Delete</button>
 								</form>
 							</div>
 							<i class="fa-sharp fa-regular fa-calendar-days"></i>
@@ -171,10 +171,9 @@ if (!email.equals(null)) {
 						}
 						%>
 						<%
+						} else {
+						response.sendRedirect("login.jsp");
 						}
-else{
-	response.sendRedirect("login.jsp");
-}
 						%>
 
 

@@ -1,6 +1,6 @@
 package com.dao;
 
 public interface deleteDao {
-	public void delete();
+	public String deleteMessage(String sn);
 
 }

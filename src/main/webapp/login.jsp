@@ -1,90 +1,84 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Login Form</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f2f2f2;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
+<title>Login Form</title>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+	crossorigin="anonymous">
+<style>
+body {
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+}
 
-        .login-container {
-            border: 1px solid #ccc;
-            padding: 20px;
-            border-radius: 5px;
-            background-color: #fff;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            max-width: 400px;
-            width: 100%;
-        }
+.container {
+	max-width: 400px;
+	margin: 0 auto;
+	padding: 20px;
+}
 
-        .login-container h2 {
-            text-align: center;
-            margin-bottom: 20px;
-        }
+h1 {
+	text-align: center;
+}
 
-        .login-container label,
-        .login-container input {
-            display: block;
-            width: 100%;
-            margin-bottom: 10px;
-        }
+form {
+	display: flex;
+	flex-direction: column;
+}
 
-        .login-container input[type="text"],
-        .login-container input[type="password"] {
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 3px;
-        }
+input, button {
+	margin-bottom: 10px;
+	padding: 10px;
+}
 
-        .login-container input[type="submit"] {
-            padding: 10px;
-            background-color: #4CAF50;
-            color: #fff;
-            border: none;
-            border-radius: 3px;
-            cursor: pointer;
-            width: 100%;
-        }
+button {
+	background-color: #007bff;
+	color: #fff;
+	border: none;
+	cursor: pointer;
+}
 
-        .login-container input[type="submit"]:hover {
-            background-color: #45a049;
-        }
-    </style>
+a {
+	text-align: center;
+	display: block;
+}
+
+/* Media Queries */
+@media screen and (min-width: 768px) {
+	.container {
+		max-width: 600px;
+	}
+}
+</style>
 </head>
 <body>
 
-    <div class="login-container">
-    <%
-String msg=(String)session.getAttribute("msg");
-if(msg!=null){
-%>
-<div class="alert alert-danger alert-dismissible fade show"
-	role="alert" style="text-align: center; color: red">
-	<strong><%=msg%></strong>
-	<button type="button" class="close" data-dismiss="alert"
-		aria-label="Close">
-		<span aria-hidden="true">&times;</span>
-	</button>
-</div>
-<%}
-%>
-        <h2>Login</h2>
-        <form action="Login" method="post">
-            <label for="email">Email:</label>
-            <input type="text" id="email" name="email" required>
+	<%
+	String msg = (String) session.getAttribute("msg");
+	if (msg != null) {
+	%>
+	<div class="alert alert-danger" role="alert"><%=msg%>
+	</div>
+	<%
+	}
+	%>
 
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
 
-            <input type="submit" value="Login">
-        </form>
-    </div>
+	<div class="container">
+		<h1>Welcome Back!</h1>
+		<form action="Login" method="post">
+			<input type="text" placeholder="Username/Email" name="email" required>
+			<input type="password" placeholder="Password" name="password"
+				required> <label> <input type="checkbox">
+				Remember Me
+			</label>
+			<button type="submit">Login</button>
+		</form>
+		<a href="#">Forgot Password?</a>
+	</div>
 </body>
+
 </html>
